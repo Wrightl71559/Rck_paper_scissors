@@ -1,6 +1,8 @@
 # component 3 - compares input to randomly generated
 # gives feedback e.g. "you won" or "you lose"
 
+# imports random
+import random
 
 # integer checking function
 def int_check(question, low, high):
@@ -21,6 +23,8 @@ def int_check(question, low, high):
 
 
 # main code
+rps_random = ["rock", "paper", "scissors"]
+
 rock = 1
 paper = 2
 scissors = 3
@@ -32,3 +36,19 @@ elif rps_input == paper:
 else:
     print("You chose scissors")
 print()
+
+chosen = random.choice(rps_random)
+print(chosen)
+
+if rps_input == 1 and chosen == paper:
+    print("You lose")
+elif rps_input == 1 and chosen == scissors:
+    print("You win!")
+elif rps_input == 2 and chosen == rock:
+    print("You win!")
+elif rps_input == 2 and chosen == scissors:
+    print("You lose")
+elif rps_input == 3 and chosen == rock:
+    print("You lose")
+elif rps_input == 3 and chosen == paper:
+    print("You win!")
