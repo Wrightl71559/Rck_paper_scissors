@@ -38,17 +38,20 @@ else:
 print()
 
 chosen = random.choice(rps_random)
-print(chosen)
+print("We chose {}".format(chosen))
+print()
 
-if rps_input == 1 and chosen == paper:
+if rps_input == 1 and chosen == "paper":
     print("You lose")
-elif rps_input == 1 and chosen == scissors:
+elif rps_input == 1 and chosen == "scissors":
     print("You win!")
-elif rps_input == 2 and chosen == rock:
+elif rps_input == 2 and chosen == "rock":
     print("You win!")
-elif rps_input == 2 and chosen == scissors:
+elif rps_input == 2 and chosen == "scissors":
     print("You lose")
-elif rps_input == 3 and chosen == rock:
+elif rps_input == 3 and chosen == "rock":
     print("You lose")
-elif rps_input == 3 and chosen == paper:
+elif rps_input == 3 and chosen == "paper":
     print("You win!")
+else:
+    print("It's a tie")
