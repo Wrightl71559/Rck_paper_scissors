@@ -1,6 +1,6 @@
-# component 4 - generates formatted statements
-# create a statement generating function
-# implement function into main code
+# component 5 - counts points
+# count points (won and lost)
+# prints points won each round
 
 # imports random
 import random
@@ -36,6 +36,10 @@ def int_check(question, low, high):
 # main code
 rps_random = ["rock", "paper", "scissors"]
 
+rounds_won = 0
+rounds_lost = 0
+rounds_drawn = 0
+
 rock = 1
 paper = 2
 scissors = 3
@@ -54,15 +58,24 @@ print()
 
 if rps_input == 1 and chosen == "paper":
     rps_statement("## You lose ##", "#")
+    rounds_lost += 1
 elif rps_input == 1 and chosen == "scissors":
     rps_statement("** You win! **", "*")
+    rounds_won += 1
 elif rps_input == 2 and chosen == "rock":
     rps_statement("** You win! **", "*")
+    rounds_won += 1
 elif rps_input == 2 and chosen == "scissors":
     rps_statement("## You lose ##", "#")
+    rounds_lost += 1
 elif rps_input == 3 and chosen == "rock":
     rps_statement("## You lose ##", "#")
+    rounds_lost += 1
 elif rps_input == 3 and chosen == "paper":
     rps_statement("** You win! **", "*")
+    rounds_won += 1
 else:
     rps_statement("== It's a tie ==", "=")
+    rounds_drawn += 1
+
+print("points: {}".format(rounds_won))
