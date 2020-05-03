@@ -1,5 +1,5 @@
-# component 6 - end game mechanics
-# loop game
+# component 7 - summary statistics
+# display games won, lost and drawn at end of game
 
 # imports random
 import random
@@ -53,7 +53,7 @@ while keep_going == "":
         print("You chose scissors")
     print()
 
-    chosen = random.choice(rps_random)
+    chosen = "rock"
     print("We chose {}".format(chosen))
     print()
 
@@ -84,3 +84,12 @@ while keep_going == "":
 
     keep_going = input("Press <enter> to play again or any key to quit ")
     print()
+
+print("Thank you for playing :)")
+print()
+
+# game summary statistics
+print(" *** Game Statistics *** ")
+print(" Rounds won: {}".format(rounds_won))
+print(" Rounds lost: {}".format(rounds_lost))
+print(" Rounds drawn: {}".format(rounds_drawn))

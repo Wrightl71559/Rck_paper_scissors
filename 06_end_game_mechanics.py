@@ -84,3 +84,5 @@ while keep_going == "":
 
     keep_going = input("Press <enter> to play again or any key to quit ")
     print()
+    print("Thank you for playing :)")
+    print()
