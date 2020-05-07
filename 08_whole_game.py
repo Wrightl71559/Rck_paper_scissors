@@ -44,7 +44,9 @@ while keep_going == "":
     rock = 1
     paper = 2
     scissors = 3
+    # get user input
     rps_input = int_check("Enter 1 for rock, 2 for paper or 3 scissors ", 1, 3)
+    print()
     if rps_input == rock:
         print("You chose rock")
     elif rps_input == paper:
@@ -55,8 +57,8 @@ while keep_going == "":
 
     chosen = random.choice(rps_random)
     print("We chose {}".format(chosen))
-    print()
 
+    # compare user input to randomly generated
     if rps_input == 1 and chosen == "paper":
         rps_statement("## You lose ##", "#")
         rounds_lost += 1
@@ -79,6 +81,7 @@ while keep_going == "":
         rps_statement("== It's a tie ==", "=")
         rounds_drawn += 1
 
+    print()
     print("points: {}".format(rounds_won))
     print()
 
