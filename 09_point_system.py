@@ -1,5 +1,5 @@
-# Full Game
-# combine everything and make sure everything is working as expected
+# component 9 - point system
+# add in a point system so the game ends when user reaches -2 points or 5 points
 
 # imports random
 import random
@@ -35,6 +35,8 @@ def int_check(question, low, high):
 # main code
 rps_random = ["rock", "paper", "scissors"]
 
+rounds = 1
+points = 0
 rounds_won = 0
 rounds_lost = 0
 rounds_drawn = 0
@@ -44,6 +46,10 @@ while keep_going == "":
     rock = 1
     paper = 2
     scissors = 3
+
+    print("-- Round {} --".format(rounds))
+    print()
+    
     # get user input
     rps_input = int_check("Enter 1 for rock, 2 for paper or 3 scissors ", 1, 3)
     print()
@@ -55,37 +61,53 @@ while keep_going == "":
         print("You chose scissors")
     print()
 
-    chosen = random.choice(rps_random)
+    chosen = "rock"
     print("We chose {}".format(chosen))
 
     # compare user input to randomly generated
     if rps_input == 1 and chosen == "paper":
         rps_statement("## You lose ##", "#")
         rounds_lost += 1
+        points -= 0.5
     elif rps_input == 1 and chosen == "scissors":
         rps_statement("** You win! **", "*")
         rounds_won += 1
+        points += 1
     elif rps_input == 2 and chosen == "rock":
         rps_statement("** You win! **", "*")
         rounds_won += 1
+        points += 1
     elif rps_input == 2 and chosen == "scissors":
         rps_statement("## You lose ##", "#")
         rounds_lost += 1
+        points -= 0.5
     elif rps_input == 3 and chosen == "rock":
         rps_statement("## You lose ##", "#")
         rounds_lost += 1
+        points -= 0.5
     elif rps_input == 3 and chosen == "paper":
         rps_statement("** You win! **", "*")
         rounds_won += 1
+        points += 1
     else:
         rps_statement("== It's a tie ==", "=")
         rounds_drawn += 1
 
     print()
-    print("points: {}".format(rounds_won))
+    print("points: {}".format(points))
     print()
 
-    keep_going = input("Press <enter> to play again or any key to quit ")
+    rounds += 1
+
+    # end game if player has won or lost
+    if points == 5:
+        keep_going = " "
+        rps_statement("!! Congratulations! You've won the game !!", "!")
+    elif points == -2:
+        keep_going = " "
+        rps_statement("// Sorry, you've ost the game //", "/")
+
+    keep_going = input("To start the next round press <enter> ")
     print()
 
 print("Thank you for playing :)")
