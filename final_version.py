@@ -33,6 +33,16 @@ def int_check(question, low, high):
 
 
 # main code
+
+# Intro
+print("Welcome to the rock paper scissors game")
+print("The rules are the same as normal rock paper scissors")
+print("except this game has a point system")
+print("to win you need 5 points (you get 1 point by winning a round)")
+print("but if you reach -2 points (you lose half a point if you lose a round) you lose the game!")
+print("Good luck!!")
+print()
+
 rps_random = ["rock", "paper", "scissors"]
 
 rounds = 1
@@ -62,7 +72,7 @@ while keep_going == "" and 5 > points > -2:
         print("You chose scissors")
     print()
 
-    chosen = "rock"
+    chosen = random.choice(rps_random)
     print("We chose {}".format(chosen))
 
     # compare user input to randomly generated
